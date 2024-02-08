@@ -1,0 +1,90 @@
+<!doctype html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <script src="Slideshow.js"></script>
+
+        
+       <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>Homepage</title>
+            <link rel='stylesheet' type='text/css' href='common.css' />
+        </head>
+
+        <body>
+
+        
+
+
+            <div class='topnav'>
+                <a href='/'><span>Homepage</span></a>
+                <a href='PageMission.html'><span>Our Mission</span></a>
+                <a href='PageST21.html'><span>Sub Task 2.1</span></a>
+                <a href='PageST22.html'><span>Sub Task 2.2</span></a>
+                <a href='PageST31.html'><span>Sub Task 3.1</span></a>
+                <a href='PageST32.html'><span>Sub Task 3.2</span></a>
+            </div>
+
+
+        <div class='title'>
+            <h1> Homelessness </h1> 
+        </div>
+       
+
+        
+                
+        <div class ='slideshow-container'>
+            <script src="JS/Slideshow.js"></script>
+
+
+            <div class = 'mySlides Fade'>
+                <div class = 'numbertext'>1/3</div>
+                <img src = 'Puppy.jpg' style='width:100%'>
+                <div class='text'><span th:text="${CaptionOne}"></span></div> 
+            </div>
+
+        
+            <div class = 'mySlides Fade'>
+                <div class = 'numbertext'>2/3</div>
+                <img src = 'Puppy2.jpg' style='width:100%'>
+                <div class='text'><span th:text="${CaptionTwo}"></span> </div> 
+            </div>
+
+        
+            <div class = 'mySlides Fade'>
+                <div class = 'numbertext'>3/3</div>
+                <img src = 'Puppy3.jpg' style='width:100%'>
+                <div class='text'><span th:text="${CaptionThree}"></span></div> 
+            </div>
+
+        <a class='prev' onclick='plusSlides(-1)'>&#10094</a>
+        <a class='next' onclick='plusSlides(1)'>&#10095</a>
+
+        </div> 
+
+    <div style='text-align:center'>
+        <span class='dot' onclick='currentSlide(1)'></span>
+        <span class='dot' onclick='currentSlide(2)'></span>
+        <span class='dot' onclick='currentSlide(3)'></span>
+
+    </div> 
+
+
+                
+        
+
+        
+            <div class='footerIndex'>
+                <p>COSC2803 - Studio Project Starter Code</p>
+
+                <div class="GroupHeader">
+                    <span>G66</span>
+                </div>
+            </div>
+       
+
+        
+        </body>
+    
+    </html>
+
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>All Movies</title>
+     
+        <link rel="stylesheet" type="text/css" href="common.css" />
+     </head>
+
+     <body>
+
+      <div class='topnav'>
+         <a href='/'><span>Homepage</span></a>
+         <a href='PageMission.html'><span>Our Mission</span></a>
+         <a href='PageST21.html'><span>Sub Task 2.1</span></a>
+         <a href='PageST22.html'><span>Sub Task 2.2</span></a>
+         <a href='PageST31.html'><span>Sub Task 3.1</span></a>
+         <a href='PageST32.html'><span>Sub Task 3.2</span></a>
+     </div>
+
+
+     <div class = "ContentLevel2">
+      <span Style="display: inline-block">
+         <form action="/PageST21.html" method="post">
+            <label for="state_drop">Pick a State: </label>
+
+            <select name="state_drop" id="state_drop">
+                <!-- The options on the webpage, it also saves what is selected when a user submits data -->
+                <option>Select a State</option>
+                <option th:selected="${selected == 'VIC'}" value="VIC">Victoria</option>
+                <option th:selected="${selected == 'ACT'}" value="ACT">Australian Capital Territory</option>
+                <option type= "submit" th:selected="${selected == 'QLD'}" value="QLD">Queensland</option>
+                <option th:selected="${selected == 'NT'}" value="NT">Northern Territory</option>
+                <option th:selected="${selected == 'WA'}" value="WA">Western Australia</option>
+                <option th:selected="${selected == 'TAS'}" value="TAS">Tasmania</option>
+                <option th:selected="${selected == 'SA'}" value="SA">South Australia</option>
+            </select>
+
+            <label for="lga_drop">Pick a LGA: </label>
+
+            <select name="lga_drop" id="lga_drop">
+
+                <option th:if="${selected == 'null'}">Select a LGA</option>
+                <option th:unless='${selected == 'null'}' th:each='lga : ${lga}' th:text='${lga.name}'' th:value='${lga.code}' th:selected='${lga.name == name}'></option>
+            
+               </select>
+               
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+      </span>
+
+
+
+  </div>
+
+     <!-- <div class='content'>
+      <form action='/moviestype.html' method='post'>
+         <div class='form-group'>
+            <label for='movietype_drop'>Select the type Movie Type (Dropdown):</label>
+            <select id='movietype_drop' name='movietype_drop'>
+
+               <option th:each="type : ${types}" th:text="${type}"></option>
+            </select>
+         </div>
+         <div class='form-group'>
+            <label for='movietype_textbox'>Select the type Movie Type (Textbox)</label>
+            <input class='form-control' id='movietype_textbox' name='movietype_textbox'>
+         </div>
+         <button type='submit' class='btn btn-primary'>Submit</button>
+      </form>
+
+      <div th:if="${#lists.size(movies_drop) > 0}"> 
+         <h2 th:text="${title_drop}"></h2>
+         <ul>
+            <li th:each="movie : ${movies_drop}" th:text="${movie}"></li>
+         </ul>
+      </div>
+
+      <div th:if="${#lists.size(movies_text) > 0}">
+         <h2 th:text="${title_text}"></h2>
+         <ul>
+            <li th:each="movie : ${movies_text}" th:text="${movie}"></li>
+         </ul>
+      </div>
+   </div> -->
+        
+     </body>
